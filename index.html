@@ -2,171 +2,189 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gestão Agrícola - Planilha</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="p-4">
-  <div class="container">
-    <h1 class="mb-4 text-center">Planilha de Gestão Agrícola</h1>
-    <p class="text-center">Autor: Eng. Jefferson Merchan</p>
+<body class="bg-light p-3">
+  <div class="container-fluid px-2">
+    <header class="text-center mb-4">
+      <h1 class="fw-bold">Planilha de Gestão Agrícola</h1>
+      <p class="mb-0">Autor: Eng. Jefferson Merchan</p>
+    </header>
 
-    <div class="mb-5">
-      <h4 class="text-center">Resumo de Indicadores</h4>
-      <canvas id="graficoResumo" height="100"></canvas>
-    </div>
+    <section class="mb-5">
+      <h4 class="text-center mb-3">Resumo de Indicadores</h4>
+      <div class="ratio ratio-16x9">
+        <canvas id="graficoResumo"></canvas>
+      </div>
+    </section>
 
-    <div class="accordion" id="accordionGestao">
+    <section class="accordion" id="accordionGestao">
+      <!-- Repetição das seções com tabelas responsivas -->
       <!-- Seção 1 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading1">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true">
             1. Inventário de Culturas
           </button>
         </h2>
         <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Lote</th><th>Tipo de Cultura</th><th>Variedade</th><th>Data de Plantio</th><th>Previsão de Colheita</th><th>Área (ha)</th><th>Responsável</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td>Milho</td><td>Híbrido 30K73</td><td>10/03/2025</td><td>15/06/2025</td><td>5</td><td>João Silva</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Lote</th><th>Tipo de Cultura</th><th>Variedade</th><th>Data de Plantio</th><th>Previsão de Colheita</th><th>Área (ha)</th><th>Responsável</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Milho</td><td>Híbrido 30K73</td><td>10/03/2025</td><td>15/06/2025</td><td>5</td><td>João Silva</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Seção 2 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2">
+        <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
             2. Calendário Agrícola
           </button>
         </h2>
         <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Cultura</th><th>Etapa</th><th>Data Prevista</th><th>Data Real</th><th>Atividade</th><th>Responsável</th><th>Observações</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Milho</td><td>Adubação</td><td>01/04/2025</td><td>02/04/2025</td><td>Aplicação de fertilizante NPK</td><td>João Silva</td><td>Feita após chuva leve</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Cultura</th><th>Etapa</th><th>Data Prevista</th><th>Data Real</th><th>Atividade</th><th>Responsável</th><th>Observações</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Milho</td><td>Adubação</td><td>01/04/2025</td><td>02/04/2025</td><td>Aplicação de fertilizante NPK</td><td>João Silva</td><td>Feita após chuva leve</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Seção 3 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading3">
+        <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
             3. Controle de Custos e Finanças
           </button>
         </h2>
         <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Data</th><th>Tipo de Gasto</th><th>Descrição</th><th>Valor</th><th>Referente a</th><th>Forma de Pagamento</th><th>Observações</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>09/03/2025</td><td>Insumos</td><td>Compra de sementes de milho</td><td>1500</td><td>Lote 1 / Milho</td><td>Transferência</td><td>Sementes híbridas</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Data</th><th>Tipo de Gasto</th><th>Descrição</th><th>Valor</th><th>Referente a</th><th>Forma de Pagamento</th><th>Observações</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>09/03/2025</td><td>Insumos</td><td>Compra de sementes de milho</td><td>1500</td><td>Lote 1 / Milho</td><td>Transferência</td><td>Sementes híbridas</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Seção 4 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading4">
+        <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
             4. Receitas e Vendas
           </button>
         </h2>
         <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Data</th><th>Produto Vendido</th><th>Quantidade</th><th>Preço Unitário</th><th>Total</th><th>Cliente</th><th>Forma de Pagamento</th><th>Observações</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>20/06/2025</td><td>Milho</td><td>3000 kg</td><td>0,80</td><td>2400</td><td>Alimentos S.A.</td><td>Dinheiro</td><td>Entrega imediata</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Data</th><th>Produto Vendido</th><th>Quantidade</th><th>Preço Unitário</th><th>Total</th><th>Cliente</th><th>Forma de Pagamento</th><th>Observações</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>20/06/2025</td><td>Milho</td><td>3000 kg</td><td>0,80</td><td>2400</td><td>Alimentos S.A.</td><td>Dinheiro</td><td>Entrega imediata</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Seção 5 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading5">
+        <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
             5. Inventário de Insumos
           </button>
         </h2>
         <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Insumo</th><th>Unidade</th><th>Quantidade Atual</th><th>Data da Última Compra</th><th>Preço Unitário</th><th>Fornecedor</th><th>Observações</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Fertilizante NPK</td><td>kg</td><td>200</td><td>25/03/2025</td><td>2,50</td><td>AgroInsumos</td><td>Uso no milho</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Insumo</th><th>Unidade</th><th>Quantidade Atual</th><th>Data da Última Compra</th><th>Preço Unitário</th><th>Fornecedor</th><th>Observações</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Fertilizante NPK</td><td>kg</td><td>200</td><td>25/03/2025</td><td>2,50</td><td>AgroInsumos</td><td>Uso no milho</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Seção 6 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading6">
+        <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
             6. Clima e Condições
           </button>
         </h2>
         <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Data</th><th>Temperatura</th><th>Chuva (mm)</th><th>Observações</th><th>Impacto nas Culturas</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>02/04/2025</td><td>27°C</td><td>10</td><td>Chuva leve</td><td>Favorável para adubação</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Data</th><th>Temperatura</th><th>Chuva (mm)</th><th>Observações</th><th>Impacto nas Culturas</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>02/04/2025</td><td>27°C</td><td>10</td><td>Chuva leve</td><td>Favorável para adubação</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Seção 7 -->
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading7">
+        <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
             7. Indicadores de Produtividade
           </button>
         </h2>
         <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionGestao">
           <div class="accordion-body">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr><th>Cultura</th><th>Área (ha)</th><th>Produção (kg)</th><th>Rendimento (kg/ha)</th><th>Custos Totais</th><th>Receita Líquida</th><th>Rentabilidade (%)</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Milho</td><td>5</td><td>3000</td><td>600</td><td>2500</td><td>2400</td><td>-4%</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr><th>Cultura</th><th>Área (ha)</th><th>Produção (kg)</th><th>Rendimento (kg/ha)</th><th>Custos Totais</th><th>Receita Líquida</th><th>Rentabilidade (%)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Milho</td><td>5</td><td>3000</td><td>600</td><td>2500</td><td>2400</td><td>-4%</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
+    </section>
   </div>
 
   <script>
@@ -188,9 +206,7 @@
           tooltip: { mode: 'index', intersect: false }
         },
         scales: {
-          y: {
-            beginAtZero: true
-          }
+          y: { beginAtZero: true }
         }
       }
     });
